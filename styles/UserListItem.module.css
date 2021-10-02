@@ -1,0 +1,22 @@
+.container {
+  max-width: 500px;
+  display: flex;
+  align-items: center;
+  border-bottom: gray 1px solid;
+}
+
+.container :global(.sb-avatar) {
+  flex: 0 1;
+}
+
+.container h5 {
+  flex: 1;
+}
+
+.container > * {
+  margin: 0.25em;
+}
+
+.container :global(.badge) {
+  background-color: var(--bs-gray);
+}

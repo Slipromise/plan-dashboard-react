@@ -1,0 +1,20 @@
+.container {
+  margin-bottom: 1em;
+  border-bottom: 1px solid #000;
+}
+
+.container:last-child {
+  margin-bottom: unset;
+}
+
+.container *[data-header] {
+  margin-bottom: 0.5em;
+}
+
+.container *[data-date] {
+  float: right;
+}
+
+.container *[data-content] {
+  white-space: pre-line;
+}

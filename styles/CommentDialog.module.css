@@ -1,0 +1,4 @@
+.container *:global(.modal-body) {
+  overflow: auto;
+  max-height: 60vh;
+}

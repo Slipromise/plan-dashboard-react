@@ -1,0 +1,80 @@
+.container {
+  min-width: 350px;
+  margin: 0.5em;
+}
+
+.container :global(.card-footer) {
+  display: flex;
+  align-items: center;
+}
+
+.container :global(.card-footer) > * {
+  margin: auto;
+  margin-right: 0.25em;
+  margin-left: 0.25em;
+}
+
+.container *[data-svg-btn] {
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 4px;
+  width: 1.4em;
+  height: 1.4em;
+}
+
+.container *[data-svg-btn]:hover {
+  background-color: var(--bs-primary);
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+.container :global(.card-footer) > *:first-child {
+  margin-left: unset;
+}
+
+.container :global(.card-footer) > *:last-child {
+  margin-right: unset;
+}
+
+.container :global(.card-header) div[data-title] > * {
+  /* display: inline-flex; */
+  /* align-items: center; */
+}
+
+.container :global(.card-title) > svg:last-child {
+  float: right;
+}
+
+.container :global(.card-title) > div:first-child {
+  float: left;
+}
+
+.container :global(.card-title) > *[data-is-check] {
+  cursor: pointer;
+  margin-right: 0.5em;
+}
+
+.container :global(.card-title) > *[data-is-check="false"] > *[data-checked],
+.container :global(.card-title) > *[data-is-check="false"] > *[data-hover] {
+  display: none;
+}
+
+.container
+  :global(.card-title)
+  > *[data-is-check="false"]:hover
+  > *[data-hover] {
+  display: unset;
+  color: var(--bs-primary);
+}
+
+.container
+  :global(.card-title)
+  > *[data-is-check="false"]:hover
+  > *[data-unchecked] {
+  display: none;
+}
+
+.container :global(.card-title) > *[data-is-check="true"] > *[data-unchecked],
+.container :global(.card-title) > *[data-is-check="true"] > *[data-hover] {
+  display: none;
+}

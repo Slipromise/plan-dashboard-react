@@ -1,0 +1,9 @@
+.container *:global(.modal-body) {
+  overflow: auto;
+  max-height: 60vh;
+}
+
+.container *:global(.input-group) {
+  margin: 0.5em;
+  width: unset;
+}

@@ -32,3 +32,14 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+任務看板
+
+功能：
+-使用者註冊
+-使用者驗證
+-建立任務
+-刪除任務
+-修改任務（狀態、合作者、評論、公開）
+-預覽任務（自身、他人）
+-預覽活動（自身、他人）

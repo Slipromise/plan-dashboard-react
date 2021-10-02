@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.container :global(.form-control) {
+  flex: 1;
+  margin-left: 0.5em;
+  border-radius: 10px;
+  max-height: 500px;
+  resize: none;
+}
