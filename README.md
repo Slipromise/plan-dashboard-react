@@ -1,22 +1,27 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+## 計畫儀表板
 
-First, run the development server:
+計畫與任務管理，使用React、Redux、Graphql等技術
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## 介紹
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- 登入入口
+![Alternate text](./doc/登入.png)
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+- 側扁選單
+![Alternate text](./doc/側邊選單.png)
+![Alternate text](./doc/側邊選單縮小.png)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- 計畫列表
+![Alternate text](./doc/計畫.png)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- 我的任務與計畫的任務
+![Alternate text](./doc/我的任務.png)
+![Alternate text](./doc/計畫的任務.png)
+
+- 成員與評論
+![Alternate text](./doc/成員列表.png)
+![Alternate text](./doc/評論.png)
 
 ## Learn More
 
