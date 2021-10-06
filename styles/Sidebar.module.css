@@ -1,0 +1,34 @@
+.container {
+  height: 100vh;
+}
+
+.container :global(.pro-sidebar-header) {
+  display: flex;
+  align-items: center;
+  padding: 8px 35px 8px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: #1d1d1da6;
+}
+
+.container :global(.pro-sidebar-header) > h4 {
+  flex-shrink: 1;
+  white-space: nowrap;
+  margin: 0;
+  margin-left: 10px;
+}
+
+.container :global(.pro-sidebar-footer) {
+  /* position: static; */
+  position: sticky;
+  bottom: 0;
+  background-color: #1d1d1da6;
+}
+.container :global(.pro-sidebar-layout) {
+  scrollbar-width: none;
+}
+
+.container :global(.pro-sidebar-layout)::-webkit-scrollbar {
+  display: none;
+}

@@ -1,20 +1,18 @@
 import React, { ReactElement, useState } from "react";
 import Avatar from "react-avatar";
 import { Button, Card } from "react-bootstrap";
-import { TaskStatus } from "../definitions/common";
 import { ImHourGlass } from "react-icons/im";
 import { BsCheck, BsCheckCircle, BsCircle } from "react-icons/bs";
 import { MdError, MdMessage, MdMoreHoriz, MdPerson } from "react-icons/md";
 import TaskStatusDropdown from "./TaskStatusDropdown";
 import styles from "../styles/TaskCard.module.css";
+import { TaskStatus } from "../store/graphql-generated";
 
 interface Props {
-  initiator: string;
-  initiatorAvatarUri: string;
   isPublic?: boolean;
   status: TaskStatus;
   statusOptions: TaskStatus[];
-  creatDate: string;
+  // creatDate: string;
   title: string;
   comments?: number;
   participators?: number;
@@ -23,11 +21,9 @@ interface Props {
 
 export default function TaskCard({
   title,
-  creatDate,
+  // creatDate,
   status,
-  initiatorAvatarUri,
   isPublic = false,
-  initiator,
   statusOptions,
   participators,
   comments,
@@ -36,17 +32,17 @@ export default function TaskCard({
     <Card className={styles.container}>
       <Card.Header>
         <Card.Title>
-          <div data-is-check={status === TaskStatus.COMPLETE}>
+          <div data-is-check={status === TaskStatus.Complete}>
             <BsCheck size={20} data-checked />
             <BsCheckCircle size={20} data-hover />
             <BsCircle size={20} data-unchecked />
           </div>
           {title}
         </Card.Title>
-        <Card.Subtitle>
+        {/* <Card.Subtitle>
           <Avatar src={initiatorAvatarUri} name={initiator} size="32" round />
           {creatDate}
-        </Card.Subtitle>
+        </Card.Subtitle> */}
       </Card.Header>
       {/* <Card.Body>Body</Card.Body> */}
       <Card.Footer>

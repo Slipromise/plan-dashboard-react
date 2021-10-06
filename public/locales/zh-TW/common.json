@@ -1,0 +1,17 @@
+{
+  "label": {
+    "login": "登入",
+    "register": "註冊",
+    "email": "電子信箱",
+    "password": "密碼",
+    "Plans": "計畫",
+    "plans": "計畫",
+    "addPlans": "新增計畫",
+    "tasks": "任務",
+    "plansDashboard": "計畫主選單"
+  },
+  "sentence": {
+    "emailPlaceholder": "請輸入電子信箱...",
+    "passwordPlaceholder": "請輸入密碼..."
+  }
+}

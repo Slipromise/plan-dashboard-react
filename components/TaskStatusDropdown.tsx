@@ -1,9 +1,9 @@
 import React, { ReactElement, useState } from "react";
 import { Dropdown, DropdownButton } from "react-bootstrap";
-import { TaskStatus } from "../definitions/common";
 import { ImHourGlass } from "react-icons/im";
 import { BsCheck } from "react-icons/bs";
 import { MdError } from "react-icons/md";
+import { TaskStatus } from "../store/graphql-generated";
 interface Props {
   disable?: boolean;
   selectedOption: TaskStatus;
@@ -12,8 +12,8 @@ interface Props {
 
 export default function TaskStatusDropdown({
   disable,
-  selectedOption = TaskStatus.INITIAL,
-  options = [TaskStatus.ACCEPTING, TaskStatus.FAIL, TaskStatus.COMPLETE],
+  selectedOption = TaskStatus.Initial,
+  options = [TaskStatus.Accepting, TaskStatus.Fail, TaskStatus.Complete],
 }: Props): ReactElement {
   return (
     <Dropdown>
@@ -34,9 +34,9 @@ export default function TaskStatusDropdown({
 }
 
 const getIcon = (s: TaskStatus) =>
-  s === TaskStatus.COMPLETE ? (
+  s === TaskStatus.Complete ? (
     <BsCheck size={16} />
-  ) : s === TaskStatus.FAIL || s === TaskStatus.PENDING ? (
+  ) : s === TaskStatus.Fail || s === TaskStatus.Pending ? (
     <MdError size={16} />
   ) : (
     <ImHourGlass size={16} />

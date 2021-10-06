@@ -1,0 +1,33 @@
+.plan_tasks {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.plan_header {
+  width: 100%;
+  height: 50px;
+  background-color: red;
+}
+
+.plan_buckets {
+  height: 100%;
+  /* background-color: aqua; */
+  display: flex;
+  -webkit-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-flex-direction: row;
+  -moz-box-orient: horizontal;
+  -moz-box-direction: normal;
+  flex-direction: row;
+}
+
+.plan_buckets > div {
+  flex: 0 0 400px;
+  background-color: antiquewhite;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  overflow-y: auto;
+}

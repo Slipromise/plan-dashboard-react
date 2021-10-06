@@ -1,0 +1,11 @@
+.container :global(.modal-dialog) {
+  max-width: 400px;
+}
+
+.container :global(.btn) input {
+  display: none;
+}
+
+.container :global(.btn-group) :global(.btn) {
+  flex: 1;
+}
