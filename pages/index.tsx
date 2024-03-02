@@ -25,6 +25,11 @@ import PlanCards from "../containers/PlanCards";
 import useSidebarProps from "../hooks/useSidebarProps";
 import MyTasks from "../containers/MyTasks";
 import PlanTasks from "../containers/PlanTasks";
+import useInfiniteQuery from "../hooks/useInfiniteQuery";
+import { api, useLazyGetSelfTasksQuery } from "../store/graphql-generated";
+import { useSelector } from "react-redux";
+import { tokenPayloadSelector } from "../store/selectors";
+import InfiniteScroll from "../components/InfiniteScroll";
 
 const Home: NextPage = () => {
   const { t } = useTranslation();
@@ -38,6 +43,23 @@ const Home: NextPage = () => {
 
   const sidebarProps = useSidebarProps();
 
+  const { isLogin } = useSelector(tokenPayloadSelector);
+
+  const { data, fetchNext, reset } = useInfiniteQuery(
+    api.endpoints.GetSelfTasks,
+    {
+      getNextArg: (lastArg, lastData) => ({
+        ...lastArg,
+        tasksCursorId: lastData.me.tasks?.[lastData.me.tasks.length - 1].id,
+      }),
+      initialArg: { tasksSize: 5 },
+      // isSkip: !isLogin,
+      dataSelector: (result) => result.me.tasks || [],
+    }
+  );
+
+  console.log(data);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -47,8 +69,33 @@ const Home: NextPage = () => {
       </Head>
       <Sidebar {...sidebarProps} />
       {/* <PlanCards /> */}
-      <MyTasks />
+      {/* <MyTasks /> */}
+      <Button onClick={fetchNext}>trigg</Button>
+      <Button onClick={reset}>trigg</Button>
       {/* <PlanTasks></PlanTasks> */}
+      <InfiniteScroll
+        endpoint={api.endpoints.GetSelfTasks}
+        initialArg={{ tasksSize: 5 }}
+        itemRender={TaskCard}
+        dataSelector={(d) => {
+          return (
+            d?.me.tasks?.map((item) => ({
+              status: item.status,
+              statusOptions: item.statusOptions,
+              title: item.title,
+              id: item.id,
+            })) || []
+          );
+        }}
+        getNextArg={(a, d) => {
+          return d.me.tasks?.[d.me.tasks?.length - 1]
+            ? {
+                ...a,
+                tasksCursorId: d.me.tasks[d.me.tasks.length - 1].id,
+              }
+            : undefined;
+        }}
+      />
       <CommentDialog
         show={showCommentDialog}
         onHide={() => setShowCommentDialog(false)}

@@ -5,6 +5,7 @@ import CommentInput from "./CommentInput";
 import CommentListItem from "./CommentListItem";
 import styles from "../styles/CommentDialog.module.css";
 import { useUpdateEffect } from "react-use";
+import { api } from "../store/graphql-generated";
 
 interface Props extends React.ComponentProps<typeof Modal> {
   title?: string;
